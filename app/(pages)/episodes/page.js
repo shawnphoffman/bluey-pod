@@ -4,7 +4,7 @@ import { XMLParser } from 'fast-xml-parser'
 import styles from 'app/Global.module.css'
 import Episodes from 'components/Episodes/Episodes'
 
-const dataUrl = 'https://anchor.fm/s/d8972e20/podcast/rss'
+const dataUrl = 'https://anchor.fm/s/bdcbfb70/podcast/rss'
 const xmlOptions = {
 	ignoreAttributes: false,
 	attributeNamePrefix: '@_',
