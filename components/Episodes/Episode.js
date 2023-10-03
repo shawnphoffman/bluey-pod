@@ -1,11 +1,14 @@
+'use client'
+
 import { memo } from 'react'
-import Linkify from 'react-linkify'
+import { sanitize } from 'isomorphic-dompurify'
 
 import styles from './Episodes.module.css'
 
 const options = { year: 'numeric', month: 'long', day: 'numeric' }
 
-const Episodes = async ({ episode }) => {
+const Episodes = ({ episode }) => {
+	const clean = sanitize(episode.summary.replace(/<p><br><\/p>|\n/gim, ''))
 	const pubDate = new Date(episode.pubDate).toLocaleDateString('en-US', options)
 
 	return (
@@ -19,7 +22,7 @@ const Episodes = async ({ episode }) => {
 					<div className={styles.pubDate} suppressHydrationWarning>
 						Posted: {pubDate}
 					</div>
-					<Linkify>{episode.summary}</Linkify>
+					<div dangerouslySetInnerHTML={{ __html: clean }}></div>
 					<a className={styles.link} href={episode.link}>
 						Episode Link
 					</a>

@@ -10,9 +10,9 @@ const NavBar = () => {
 			<ActiveLink href="/" activeClassName={styles.active}>
 				<div className={styles.styledLink}>Links</div>
 			</ActiveLink>
-			{/* <ActiveLink href="/episodes" activeClassName={styles.active}>
+			<ActiveLink href="/episodes" activeClassName={styles.active}>
 				<div className={styles.styledLink}>Episodes</div>
-			</ActiveLink> */}
+			</ActiveLink>
 			{/* <ActiveLink href="/friends" activeClassName={styles.active}>
 				<div className={styles.styledLink}>Friends</div>
 			</ActiveLink> */}
