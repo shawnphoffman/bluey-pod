@@ -1,3 +1,3 @@
-# Jammed Transmissions
+# Dinner with the Heelers
 
-Official website for Jammed Transmissions, a Star Wars podcast.
+Official website for Dinner with the Heelers, the Bluey podcast.
