@@ -24,21 +24,25 @@ export const metadata = {
 	},
 }
 
-export const runtime = 'edge'
-
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" style={{ fontFamily: openSans.style.fontFamily }}>
 			<head>
 				{/* <!-- FontAwesome Icons --> */}
 				<Script src="https://kit.fontawesome.com/d7ccc5bb1a.js" strategy="afterInteractive" rel="preload" as="font" />
+				{/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> */}
 			</head>
 			<body>
 				<div className="scroller">
 					<div className={styles.wrapper}>
 						<div className={styles.page}>
 							<div className={styles.header}>
-								{/* <Image className={styles.headerLogo} alt="Dinner with the Heelers" src={titleLogo} width={450} height={450} priority /> */}
+								{/* <h1>
+									<span className={`animate__animated animate__bounce animate`}>Dinner </span>
+									<span className={`animate__animated animate__bounce animate`}>with </span>
+									<span className={`animate__animated animate__bounce animate`}>the </span>
+									<span className={`animate__animated animate__bounce animate`}>Heelers</span>
+								</h1> */}
 								<Image className={styles.headerLogo} alt="Dinner with the Heelers" src={titleLogo} width={300} height={300} priority />
 								<NavBar />
 							</div>

@@ -44,21 +44,21 @@ const Reviews = async () => {
 	if (!filteredReviews) return null
 
 	return (
-		<>
+		<div className={styles.bigContainer}>
 			<div className={styles.heading}>Recent Reviews</div>
 			{filteredReviews.map(r => (
 				<div className={styles.container} key={r.title}>
 					<div className={styles.header}>
 						<div className={styles.byline}>
 							<div className={styles.title}>{`"${r.title}"`}</div>
-							<div className={styles.author}>{r.author}</div>
+							{/* <div className={styles.author}>{r.author}</div> */}
 						</div>
 						<Stars count={r.stars} />
 					</div>
 					<div className={styles.text}>{r.text}</div>
 				</div>
 			))}
-		</>
+		</div>
 	)
 }
 

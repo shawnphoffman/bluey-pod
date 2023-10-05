@@ -1,3 +1,10 @@
+@value bubbled from "app/Global.module.css";
+
+.bigContainer {
+	composes: bubbled;
+	margin-right: 0.5rem;
+}
+
 .container {
 	padding: 0.5rem;
 	justify-content: flex-start;
@@ -6,6 +13,7 @@
 	text-align: left;
 	font-size: 1rem;
 	width: 100%;
+	border-top: 2px solid var(--offBg);
 }
 
 .header {
@@ -32,7 +40,7 @@
 	margin-left: 1rem;
 	margin-right: 1rem;
 	font-style: italic;
-	color: var(--bluey2);
+	color: var(--bluey6);
 }
 @media (max-width: 600px) {
 	.author {
@@ -44,13 +52,12 @@
 .heading {
 	font-weight: bold;
 	font-size: 1.5rem;
-	margin-top: 1rem;
-	margin-bottom: 0.25rem;
+	margin-top: 0rem;
+	margin-bottom: 0.75rem;
 }
 
 .title {
 	font-weight: bold;
-	color: var(--bluey3);
 }
 
 .text {

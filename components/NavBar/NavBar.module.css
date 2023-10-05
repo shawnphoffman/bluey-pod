@@ -1,21 +1,26 @@
+@value bubbled from "app/Global.module.css";
+
 .container {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-bottom: 8px;
+	margin-bottom: 16px;
+	composes: bubbled;
 }
 
 .styledLink {
 	margin: 0 8px;
-	margin-bottom: 16px;
+	margin-bottom: 0px;
 	font-weight: bold;
 	white-space: nowrap;
 	cursor: pointer;
+	/* color: var(--bluey6); */
+	color: var(--offText);
 }
 .styledLink:hover {
-	color: var(--bluey1) !important;
+	color: var(--bluey10);
 }
 .styledLink.active {
-	border-bottom: 1px solid var(--bluey10);
+	border-bottom: 2px solid var(--bluey7);
 }

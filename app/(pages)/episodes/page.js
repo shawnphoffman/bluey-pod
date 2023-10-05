@@ -42,12 +42,7 @@ const Home = async () => {
 
 	const { episodes } = data
 
-	return (
-		<>
-			<div className={styles.pageDescription}>The Bluey Podcast</div>
-			{episodes?.length > 0 && <Episodes episodes={episodes} />}
-		</>
-	)
+	return <>{episodes?.length > 0 && <Episodes episodes={episodes} />}</>
 }
 
 export default memo(Home)
