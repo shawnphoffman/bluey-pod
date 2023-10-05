@@ -21,7 +21,7 @@ const items = [
 		title: 'TikTok',
 		href: 'https://www.tiktok.com/@theblueypodcast',
 		icon: 'fa-brands fa-tiktok',
-		background: '#ff0050',
+		background: '#eb004a',
 	},
 	{
 		title: 'Instagram',
