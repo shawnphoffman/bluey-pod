@@ -114,6 +114,12 @@ const items = [
 		icon: 'fak fa-castbox',
 		background: '#db3c0e',
 	},
+	{
+		title: 'Family Portraits',
+		href: 'https://www.instagram.com/blueyfamilyportraits/',
+		icon: 'fa-solid fa-palette',
+		background: 'var(--offText)',
+	},
 ]
 
 export default items
