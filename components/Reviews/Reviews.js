@@ -5,11 +5,11 @@ import Stars from './Stars'
 
 const dataUrl = 'https://api.shawn.party/api/bluey-pod/reviews'
 
-export const revalidate = 60 * 60 * 4
+export const revalidate = 3600
 
 async function getData() {
 	try {
-		const res = await fetch(dataUrl, { next: { revalidate: 60 * 60 * 4 } })
+		const res = await fetch(dataUrl, { next: { revalidate: 3600 } })
 		const data = await res.json()
 		const { reviews } = data
 

@@ -10,7 +10,7 @@ const xmlOptions = {
 	attributeNamePrefix: '@_',
 }
 
-export const revalidate = 60 * 60 * 4
+export const revalidate = 3600
 
 async function getData() {
 	try {
