@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { XMLParser } from 'fast-xml-parser'
 
-import styles from 'app/Global.module.css'
+// import styles from 'app/Global.module.css'
 import Episodes from 'components/Episodes/Episodes'
 
 const dataUrl = 'https://anchor.fm/s/bdcbfb70/podcast/rss'
@@ -10,7 +10,7 @@ const xmlOptions = {
 	attributeNamePrefix: '@_',
 }
 
-export const revalidate = 60 * 60 * 12
+export const revalidate = 60 * 60 * 4
 
 async function getData() {
 	try {

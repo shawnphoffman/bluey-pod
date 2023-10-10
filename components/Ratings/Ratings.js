@@ -4,11 +4,11 @@ import styles from './Ratings.module.css'
 
 const dataUrl = 'https://api.shawn.party/api/bluey-pod/reviews'
 
-export const revalidate = 60 * 60 * 12
+export const revalidate = 60 * 60 * 4
 
 async function getData() {
 	try {
-		const res = await fetch(dataUrl, { next: { revalidate: 60 * 60 * 12 } })
+		const res = await fetch(dataUrl, { next: { revalidate: 60 * 60 * 4 } })
 		const data = await res.json()
 		const { rating, ratingsUrl } = data
 
