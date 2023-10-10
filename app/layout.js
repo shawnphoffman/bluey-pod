@@ -4,8 +4,9 @@ import { Open_Sans } from 'next/font/google'
 import Image from 'next/image'
 import Script from 'next/script'
 
-import titleLogo from 'app/dwth.webp'
 import styles from 'app/Global.module.css'
+import groupImg from 'app/images/group-clean@2x.png'
+import titleSvg from 'app/images/title-solid.svg?raw'
 import NavBar from 'components/NavBar/NavBar'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
@@ -28,22 +29,15 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en" style={{ fontFamily: openSans.style.fontFamily }}>
 			<head>
-				{/* <!-- FontAwesome Icons --> */}
 				<Script src="https://kit.fontawesome.com/d7ccc5bb1a.js" strategy="afterInteractive" rel="preload" as="font" />
-				{/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> */}
 			</head>
 			<body>
 				<div className="scroller">
 					<div className={styles.wrapper}>
 						<div className={styles.page}>
 							<div className={styles.header}>
-								{/* <h1>
-									<span className={`animate__animated animate__bounce animate`}>Dinner </span>
-									<span className={`animate__animated animate__bounce animate`}>with </span>
-									<span className={`animate__animated animate__bounce animate`}>the </span>
-									<span className={`animate__animated animate__bounce animate`}>Heelers</span>
-								</h1> */}
-								<Image className={styles.headerLogo} alt="Dinner with the Heelers" src={titleLogo} width={300} height={300} priority />
+								<Image className={styles.imageFamily} alt="" src={groupImg} width={300} priority />
+								<Image className={styles.imageTitle} alt="Dinner with the Heelers" src={titleSvg} width={300} priority />
 								<NavBar />
 							</div>
 							<div className={styles.pageDetails}>{children}</div>

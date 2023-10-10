@@ -28,7 +28,8 @@
 
 	--offBorderRadius: 1rem;
 	--offBorder: 8px solid var(--offWhite);
-	--offBoxShadow: 3px 3px 0px 3px var(--offBoxShadowColor);
+	/* --offBoxShadow: 3px 3px 0px 3px var(--offBoxShadowColor); */
+	--offBoxShadow: 2px 2px 0px 2px #719fc2;
 }
 
 * {

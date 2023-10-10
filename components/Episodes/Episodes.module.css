@@ -64,6 +64,7 @@
 	white-space: break-spaces;
 	text-wrap: wrap;
 	text-overflow: ellipsis;
+	width: 100%;
 }
 @media (max-width: 720px) {
 	.summary {
@@ -124,7 +125,7 @@
 	composes: bubbled;
 }
 .input::placeholder {
-	color: var(--bluey7);
+	color: #719fc2;
 }
 .input:focus {
 	outline-style: none;
