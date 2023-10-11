@@ -18,6 +18,9 @@
 	align-items: center;
 	white-space: nowrap;
 }
+.container:hover {
+	color: var(--white);
+}
 
 .star {
 	font-size: 0.8em;
