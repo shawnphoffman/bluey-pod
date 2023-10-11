@@ -2,7 +2,7 @@ import { memo } from 'react'
 
 import styles from 'app/Global.module.css'
 import LinkCard from 'components/LinkCard/LinkCard'
-// import Ratings from 'components/Ratings/Ratings'
+import Ratings from 'components/Ratings/Ratings'
 import Reviews from 'components/Reviews/Reviews'
 import items from 'config/links'
 
@@ -14,7 +14,7 @@ const Home = ({}) => {
 				continuing in order as they appear on Disney+. We discuss the events of the episodes, plus touch on what lessons we&apos;ve learned
 				from. It&apos;s good family fun for anyone who loves Bluey.
 			</div>
-			{/* <Ratings /> */}
+			<Ratings />
 			<div className={styles.pageRow}>
 				{items.map((item, i) => {
 					return (
