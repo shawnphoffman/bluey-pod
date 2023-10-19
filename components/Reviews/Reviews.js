@@ -21,7 +21,7 @@ async function getData() {
 	}
 }
 
-const filteredAuthors = ['']
+const filteredAuthors = ['unicorn40!']
 
 const Reviews = async () => {
 	const data = await getData()
