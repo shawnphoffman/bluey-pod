@@ -6,7 +6,7 @@ import Ratings from 'components/Ratings/Ratings'
 import Reviews from 'components/Reviews/Reviews'
 import items from 'config/links'
 
-const Home = ({}) => {
+const Home = () => {
 	return (
 		<>
 			<div className={styles.pageDescription}>

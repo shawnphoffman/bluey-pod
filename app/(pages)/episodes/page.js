@@ -1,7 +1,6 @@
 import { memo } from 'react'
 import { XMLParser } from 'fast-xml-parser'
 
-// import styles from 'app/Global.module.css'
 import Episodes from 'components/Episodes/Episodes'
 
 const dataUrl = 'https://anchor.fm/s/bdcbfb70/podcast/rss'
@@ -37,7 +36,7 @@ async function getData() {
 	}
 }
 
-const Home = async () => {
+const Page = async () => {
 	const data = await getData()
 
 	const { episodes } = data
@@ -45,4 +44,4 @@ const Home = async () => {
 	return <>{episodes?.length > 0 && <Episodes episodes={episodes} />}</>
 }
 
-export default memo(Home)
+export default memo(Page)
