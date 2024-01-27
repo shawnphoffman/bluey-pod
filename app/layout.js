@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Script from 'next/script'
 
 import styles from 'app/Global.module.css'
-import groupImg from 'app/images/group-clean@2x.png'
+import groupImg from 'app/images/group-clean.png'
 import titleSvg from 'app/images/title-solid.svg?raw'
 import NavBar from 'components/NavBar/NavBar'
 
