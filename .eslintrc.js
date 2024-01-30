@@ -1,6 +1,6 @@
 module.exports = {
-	extends: ['next/core-web-vitals'],
-	plugins: ['react', 'simple-import-sort'],
+	extends: ['next', 'prettier'],
+	plugins: ['simple-import-sort'],
 	rules: {
 		'simple-import-sort/imports': [
 			'error',

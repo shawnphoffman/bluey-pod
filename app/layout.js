@@ -5,7 +5,6 @@ import Image from 'next/image'
 
 import groupImg from 'app/images/group-clean.png'
 import titleSvg from 'app/images/title-solid.svg?raw'
-// import NavBar from 'components/NavBar/NavBar'
 import ActiveLink from 'components/ActiveLink'
 
 const openSans = Open_Sans({ subsets: ['latin'] })

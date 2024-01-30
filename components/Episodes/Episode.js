@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import styles from './Episodes.module.css'
 
 const options = { year: 'numeric', month: 'long', day: 'numeric' }
@@ -9,10 +11,7 @@ export default async function Episode({ episode }) {
 		<div className={styles.container}>
 			<h2 className={styles.title}>{episode.title}</h2>
 			<div className={styles.detailsContainer}>
-				{/* TODO Replace with next/image */}
-				{/* <Image src={episode.imgSrc} alt={episode.title} className={styles.cover} width={200} height={200} /> */}
-				{/* eslint-disable-next-line @next/next/no-img-element */}
-				<img src={episode.imgSrc} alt={episode.title} className={styles.cover} />
+				<Image src={episode.imgSrc} alt={episode.title} className={styles.cover} width={100} height={100} />
 				<div className={styles.summary}>
 					<div className={styles.pubDate} suppressHydrationWarning>
 						Posted: {pubDate}
