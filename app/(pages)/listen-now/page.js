@@ -1,12 +1,10 @@
-import { memo } from 'react'
+'use client'
 
-import styles from 'app/Global.module.css'
-
-const ListenNow = ({}) => {
+export default function ListenNow() {
 	return (
-		<div className={styles.pageDescription}>
+		<div className={'pageDescription bubbled'}>
 			<iframe
-				className={styles.iframe}
+				className={'iframe'}
 				loading="lazy"
 				title="Dinner with the Heelers Podcast Preview"
 				src="https://embed.podcasts.apple.com/us/podcast/dinner-with-the-heelers/id1648081856?itsct=podcast_box_player&amp;itscg=30200&amp;ls=1&amp;theme=light"
@@ -17,5 +15,3 @@ const ListenNow = ({}) => {
 		</div>
 	)
 }
-
-export default memo(ListenNow)

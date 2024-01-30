@@ -1,7 +1,5 @@
-import { memo } from 'react'
 import Image from 'next/image'
 
-import styles from 'app/Global.module.css'
 import colorAmanda from 'app/images/coloring/color_amanda.png'
 import colorEric from 'app/images/coloring/color_eric.png'
 import colorGuitar from 'app/images/coloring/color_guitar.png'
@@ -36,27 +34,23 @@ const coloringPages = [
 	},
 ]
 
-const Activities = () => {
+export default async function Activities() {
 	return (
-		<>
-			<div className={styles.activities}>
-				<div className={styles.activityTitle}>Coloring Pages</div>
-				<div className={styles.activityList}>
-					{coloringPages.map(coloringPage => (
-						<div className={styles.activity} key={coloringPage.import}>
-							<Image alt="" src={coloringPage.import} width={200} />
-							<a href={coloringPage.png} target="_blank" className={styles.activityLink}>
-								PNG
-							</a>
-							<a href={coloringPage.pdf} target="_blank" className={styles.activityLink}>
-								PDF
-							</a>
-						</div>
-					))}
-				</div>
+		<div className={'activities bubbled'}>
+			<div className={'activityTitle'}>Coloring Pages</div>
+			<div className={'activityList'}>
+				{coloringPages.map(coloringPage => (
+					<div className={'activity'} key={coloringPage.png}>
+						<Image alt="" src={coloringPage.import} width={200} />
+						<a href={coloringPage.png} target="_blank" className={'activityLink'}>
+							PNG
+						</a>
+						<a href={coloringPage.pdf} target="_blank" className={'activityLink'}>
+							PDF
+						</a>
+					</div>
+				))}
 			</div>
-		</>
+		</div>
 	)
 }
-
-export default memo(Activities)

@@ -1,39 +1,14 @@
-import { memo } from 'react'
+import { getReviews } from 'app/actions'
 
 import styles from './Reviews.module.css'
 import Stars from './Stars'
 
-const dataUrl = 'https://api.shawn.party/api/bluey-pod/reviews'
-
-export const revalidate = 3600
-
-async function getData() {
-	try {
-		const res = await fetch(dataUrl, { next: { revalidate: 3600 } })
-		const data = await res.json()
-		const { reviews } = data
-
-		return {
-			reviews,
-		}
-	} catch {
-		return {}
-	}
-}
-
-const filteredAuthors = ['unicorn40!']
-
-const Reviews = async () => {
-	const data = await getData()
-
-	const { reviews } = data
+export default async function Reviews() {
+	const [{ reviews }] = await Promise.all([getReviews()])
 
 	if (!reviews) return null
 
 	const filteredReviews = reviews.reduce((memo, acc) => {
-		if (filteredAuthors.includes(acc.author)) {
-			return memo
-		}
 		if (acc.stars !== '5') {
 			return memo
 		}
@@ -44,7 +19,7 @@ const Reviews = async () => {
 	if (!filteredReviews) return null
 
 	return (
-		<div className={styles.bigContainer}>
+		<div className={`${styles.bigContainer} bubbled`}>
 			<div className={styles.heading}>Recent Reviews</div>
 			{filteredReviews.map(r => (
 				<div className={styles.container} key={r.title}>
@@ -61,5 +36,3 @@ const Reviews = async () => {
 		</div>
 	)
 }
-
-export default memo(Reviews)

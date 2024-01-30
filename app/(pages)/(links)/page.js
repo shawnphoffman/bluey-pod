@@ -1,21 +1,27 @@
-import { memo } from 'react'
+import { Suspense } from 'react'
 
-import styles from 'app/Global.module.css'
-import LinkCard from 'components/LinkCard/LinkCard'
-import Ratings from 'components/Ratings/Ratings'
-import Reviews from 'components/Reviews/Reviews'
-import items from 'config/links'
+import LinkCard from 'components/LinkCard'
+import RatingsApple from 'components/RatingsApple'
+import RatingsSpotify from 'components/RatingsSpotify'
+import Reviews from 'components/Reviews'
 
-const Home = () => {
+import items from './links'
+
+export default async function Home() {
 	return (
 		<>
-			<div className={styles.pageDescription}>
+			<div className={'pageDescription bubbled'}>
 				Our family loves Bluey! Mom, Dad, and our two kids talk about each episode of Bluey, starting with the very first episode and
 				continuing in order as they appear on Disney+. We discuss the events of the episodes, plus touch on what lessons we&apos;ve learned
 				from. It&apos;s good family fun for anyone who loves Bluey.
 			</div>
-			<Ratings />
-			<div className={styles.pageRow}>
+			<div className="ratingsWrapper">
+				<Suspense>
+					<RatingsApple />
+					<RatingsSpotify />
+				</Suspense>
+			</div>
+			<div className={'pageRow'}>
 				{items.map((item, i) => {
 					return (
 						<LinkCard
@@ -33,11 +39,9 @@ const Home = () => {
 				})}
 			</div>
 
-			<div className={styles.pageRow}>
+			<div className={'pageRow'}>
 				<Reviews />
 			</div>
 		</>
 	)
 }
-
-export default memo(Home)

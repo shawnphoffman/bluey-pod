@@ -1,13 +1,12 @@
-import 'styles/globals.css'
+import 'app/global.css'
 
 import { Open_Sans } from 'next/font/google'
 import Image from 'next/image'
-import Script from 'next/script'
 
-import styles from 'app/Global.module.css'
 import groupImg from 'app/images/group-clean.png'
 import titleSvg from 'app/images/title-solid.svg?raw'
-import NavBar from 'components/NavBar/NavBar'
+// import NavBar from 'components/NavBar/NavBar'
+import ActiveLink from 'components/ActiveLink'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
 
@@ -25,22 +24,28 @@ export const metadata = {
 	},
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
 	return (
 		<html lang="en" style={{ fontFamily: openSans.style.fontFamily }}>
 			<head>
-				<Script src="https://kit.fontawesome.com/d7ccc5bb1a.js" strategy="afterInteractive" rel="preload" as="font" />
+				<script src="https://kit.fontawesome.com/d7ccc5bb1a.js" crossOrigin="anonymous" defer></script>
+				<meta name="apple-itunes-app" content="app-id=1648081856" />
 			</head>
 			<body>
 				<div className="scroller">
-					<div className={styles.wrapper}>
-						<div className={styles.page}>
-							<div className={styles.header}>
-								<Image className={styles.imageFamily} alt="" src={groupImg} width={300} priority />
-								<Image className={styles.imageTitle} alt="Dinner with the Heelers" src={titleSvg} width={300} priority />
-								<NavBar />
+					<div className={'wrapper'}>
+						<div className={'page'}>
+							<div className={'header'}>
+								<Image className={'imageFamily'} alt="" src={groupImg} width={300} priority />
+								<Image className={'imageTitle'} alt="Dinner with the Heelers" src={titleSvg} width={300} priority />
+								<div className="navContainer bubbled">
+									<ActiveLink href="/" label="Links" />
+									<ActiveLink href="/episodes" label="Episodes" />
+									<ActiveLink href="/activities" label="Activities" />
+									<ActiveLink href="/listen-now" label="Listen Now" />
+								</div>
 							</div>
-							<div className={styles.pageDetails}>{children}</div>
+							<div className={'pageDetails'}>{children}</div>
 						</div>
 					</div>
 				</div>

@@ -7,7 +7,7 @@ const items = [
 	},
 	{
 		title: 'Spotify',
-		href: 'https://podcasters.spotify.com/pod/show/bluey-podcast/episodes/Mums-and-Dads-e26po6t',
+		href: 'https://podcasters.spotify.com/pod/show/bluey-podcast',
 		icon: 'fa-brands fa-spotify',
 		background: '#16883e',
 	},
@@ -32,7 +32,7 @@ const items = [
 	{
 		title: 'Emails',
 		href: 'mailto:blueypodcast@gmail.com',
-		icon: 'fa-solid fa-mailbox-flag-up',
+		icon: 'fa-solid fa-at',
 		background: '#52565e',
 	},
 	{
@@ -74,7 +74,7 @@ const items = [
 	{
 		title: 'RSS',
 		href: 'https://anchor.fm/s/bdcbfb70/podcast/rss',
-		icon: 'fa-solid fa-rss',
+		icon: 'fa-solid fa-square-rss',
 		background: '#ce4a0c',
 	},
 	{

@@ -10,5 +10,13 @@ export default function sitemap() {
 			url: `${root}/listen-now`,
 			lastModified: new Date(),
 		},
+		{
+			url: `${root}/activities`,
+			lastModified: new Date(),
+		},
+		{
+			url: `${root}/episodes`,
+			lastModified: new Date(),
+		},
 	]
 }
