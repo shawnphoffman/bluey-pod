@@ -1,6 +1,6 @@
 'use client'
 
-import { memo, startTransition, Suspense, useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react'
+import { memo, startTransition, Suspense, useCallback, useDeferredValue, useMemo, useState } from 'react'
 import Fuse from 'fuse.js'
 
 import Loading from 'components/Loading'
@@ -10,6 +10,7 @@ import styles from './Episodes.module.css'
 
 const fuseOptions = {
 	includeScore: true,
+	useExtendedSearch: true,
 	minMatchCharLength: 3,
 	keys: [
 		{
@@ -23,20 +24,16 @@ const fuseOptions = {
 	],
 }
 
-const EpisodeList = memo(
-	({ episodes }) => {
-		if (episodes.length === 0) return <div>No episodes found...</div>
+const EpisodeList = memo(({ episodes }) => {
+	if (episodes.length === 0) return <div>No episodes found...</div>
 
-		return episodes.map(ep => <Episode episode={ep} key={ep.guid} />)
-	},
-	(prev, next) => prev.episodes.length === next.episodes.length
-)
+	return episodes.map(ep => <Episode episode={ep} key={ep.guid} />)
+})
 EpisodeList.displayName = 'EpisodeList'
 
 const Episodes = ({ episodes }) => {
 	const [search, setSearch] = useState('')
 	const deferredSearch = useDeferredValue(search)
-	const [results, setResults] = useState([])
 
 	const handleSearch = useCallback(e => {
 		e.preventDefault()
@@ -48,23 +45,24 @@ const Episodes = ({ episodes }) => {
 		return new Fuse(episodes, fuseOptions)
 	}, [episodes])
 
-	useEffect(() => {
+	const filtered = useMemo(() => {
 		if (deferredSearch.length >= 3) {
-			const filtered = fuse.search(deferredSearch, { limit: 20 }).map(e => e.item)
-			startTransition(() => setResults(filtered))
+			const out = fuse.search(`'"${deferredSearch}"`, { limit: 20 }).map(e => e.item)
+			return out
 		}
-	}, [episodes, fuse, deferredSearch])
+		return episodes
+	}, [deferredSearch, episodes, fuse])
 
 	return (
 		<>
 			<input className={`${styles.input} bubbled`} type="text" placeholder="Search" onChange={handleSearch} />
 			<div className={`${styles.episodesContainer} bubbled`}>
 				<Suspense fallback={<Loading label="episodes" />}>
-					<EpisodeList episodes={deferredSearch.length < 3 ? episodes : results} />
+					<EpisodeList episodes={filtered} />
 				</Suspense>
 			</div>
 		</>
 	)
 }
 
-export default memo(Episodes, (prev, next) => prev.episodes.length === next.episodes.length)
+export default memo(Episodes)
