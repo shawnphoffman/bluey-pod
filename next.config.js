@@ -7,6 +7,12 @@ module.exports = {
 				port: '',
 				pathname: '/**',
 			},
+			{
+				protocol: 'https',
+				hostname: 'storage.googleapis.com',
+				port: '',
+				pathname: '/goodpods-images-bucket/**',
+			},
 		],
 	},
 }

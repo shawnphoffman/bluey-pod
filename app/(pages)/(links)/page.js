@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 
+import AwardGoodpods from 'components/AwardGoodpods'
 import LinkCard from 'components/LinkCard'
 import RatingsApple from 'components/RatingsApple'
 import RatingsSpotify from 'components/RatingsSpotify'
@@ -37,6 +38,11 @@ export default async function Home() {
 						></LinkCard>
 					)
 				})}
+			</div>
+			<div className={'pageRow'}>
+				<div className="bubbled">
+					<AwardGoodpods />
+				</div>
 			</div>
 
 			<div className={'pageRow'}>
