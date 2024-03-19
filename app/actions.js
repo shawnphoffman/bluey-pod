@@ -3,9 +3,13 @@
 import { XMLParser } from 'fast-xml-parser'
 import { sanitize } from 'isomorphic-dompurify'
 
+import { appleRatingUrl, rssFeedUrl, spotifyUrl } from './(pages)/(links)/links'
+
 export async function getReviews() {
 	try {
-		const res = await fetch('https://api.shawn.party/api/bluey-pod/reviews', { next: { revalidate: 60 * 60 * 1 } })
+		const res = await fetch(`https://api.shawn.party/api/pod-data/apple?url=${appleRatingUrl}`, {
+			next: { revalidate: 60 * 60 * 1 },
+		})
 		const data = await res.json()
 		const { rating, ratingsUrl, reviews } = data
 
@@ -21,7 +25,7 @@ export async function getReviews() {
 
 export async function getSpotifyReviews() {
 	try {
-		const res = await fetch(`https://api.shawn.party/api/pod-data/spotify?url=${'https://open.spotify.com/show/01RC12mzSlrKmYYe2pjxgM'}`, {
+		const res = await fetch(`https://api.shawn.party/api/pod-data/spotify?url=${spotifyUrl}`, {
 			next: { revalidate: 60 * 60 * 1 },
 		})
 		const data = await res.json()
@@ -35,7 +39,7 @@ export async function getSpotifyReviews() {
 export async function getEpisodes() {
 	console.log('FETCHING EPISODES')
 	try {
-		const res = await fetch('https://anchor.fm/s/bdcbfb70/podcast/rss', {
+		const res = await fetch(rssFeedUrl, {
 			next: { revalidate: 60 * 60 * 1 },
 		})
 		const xml = await res.text()

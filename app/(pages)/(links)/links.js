@@ -1,3 +1,10 @@
+export const spotifyId = '01RC12mzSlrKmYYe2pjxgM'
+export const spotifyUrl = `https://open.spotify.com/show/${spotifyId}`
+export const applePodcastId = '1648081856'
+export const applePodcastUrl = `https://podcasts.apple.com/us/podcast/id${applePodcastId}`
+export const appleRatingUrl = `${applePodcastUrl}?see-all=reviews`
+export const rssFeedUrl = 'https://anchor.fm/s/bdcbfb70/podcast/rss'
+
 const items = [
 	{
 		title: 'Twitter',
