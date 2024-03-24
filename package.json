@@ -3,6 +3,8 @@
 	"version": "1.0.0",
 	"private": true,
 	"dependencies": {
+		"@vercel/analytics": "^1.2.2",
+		"@vercel/speed-insights": "^1.0.10",
 		"fast-xml-parser": "^4.3.4",
 		"fuse.js": "^6.6.2",
 		"isomorphic-dompurify": "^2.3.0",
