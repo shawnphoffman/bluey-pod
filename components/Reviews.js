@@ -3,6 +3,8 @@ import { getReviews } from 'app/actions'
 import styles from './Reviews.module.css'
 import Stars from './Stars'
 
+const badWords = ['covid']
+
 export default async function Reviews() {
 	const [{ reviews }] = await Promise.all([getReviews()])
 
@@ -10,6 +12,9 @@ export default async function Reviews() {
 
 	const filteredReviews = reviews.reduce((memo, acc) => {
 		if (acc.stars !== '5') {
+			return memo
+		}
+		if (badWords.some(badWord => acc.text.toLowerCase().includes(badWord))) {
 			return memo
 		}
 		memo.push(acc)
