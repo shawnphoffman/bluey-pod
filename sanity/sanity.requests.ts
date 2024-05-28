@@ -23,6 +23,6 @@ async function sanityFetch<QueryResponse>({ query, params = {}, tags }: SanityFe
 export async function getAwards(): Promise<AWARDS_QUERYResult> {
 	return await sanityFetch<AWARDS_QUERYResult>({
 		query: AWARDS_QUERY,
-		tags: ['awards'],
+		tags: ['award'],
 	})
 }
