@@ -1,5 +1,16 @@
 const plugin = require('tailwindcss/plugin')
 
+// const bluey1 = '#edcc6f';
+// const bluey2 = '#d2ebff';
+// const bluey3 = '#88cafc';
+const bluey4 = '#404066'
+// const bluey5 = '#181925';
+const bluey6 = '#1c5eaf'
+const bluey7 = '#72bfed'
+// const bluey8 = '#e4dcbd';
+const bluey9 = '#f1b873'
+const bluey10 = '#e27a37'
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: [
@@ -11,11 +22,11 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				// brand1: '#3b82f6',
-				brand1: '#60a5fa',
-				brand2: '#fede00',
-				brand3: 'hsl(180, 100%, 7%)',
-				brand4: '#242424',
+				brand1: bluey10,
+				brand2: bluey9,
+				brand3: bluey4,
+				brand4: bluey7,
+				brand5: bluey6,
 			},
 			keyframes: {
 				fadeInUp: {
