@@ -39,7 +39,9 @@ export default async function Home() {
 					)
 				})}
 			</div>
-			<AwardGoodpods />
+			<Suspense>
+				<AwardGoodpods />
+			</Suspense>
 
 			<div className={'pageRow'}>
 				<Reviews />
