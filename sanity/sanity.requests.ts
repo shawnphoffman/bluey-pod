@@ -3,9 +3,8 @@ import 'server-only'
 import { type QueryParams } from 'next-sanity'
 
 import sanityClient from '@/sanity/sanity.client'
-// TODO Merge this into the same file
-import { postBySlugQuery, postsListQuery, postSlugsQuery } from '@/sanity/sanity.queries'
-import { type Post } from '@/sanity/sanity.types-old'
+import { AWARDS_QUERY } from '@/sanity/sanity.queries'
+import { AWARDS_QUERYResult } from '@/sanity/sanity.types'
 
 type SanityFetchProps = {
 	query: string
@@ -21,28 +20,9 @@ async function sanityFetch<QueryResponse>({ query, params = {}, tags }: SanityFe
 	})
 }
 
-export async function getAllPosts(): Promise<Post[]> {
-	return await sanityFetch<Post[]>({
-		query: postsListQuery,
-		tags: ['post'],
+export async function getAwards(): Promise<AWARDS_QUERYResult> {
+	return await sanityFetch<AWARDS_QUERYResult>({
+		query: AWARDS_QUERY,
+		tags: ['awards'],
 	})
-}
-
-export async function getPostBySlug(slug: string): Promise<Post> {
-	return (
-		(await sanityFetch({
-			query: postBySlugQuery,
-			params: { slug },
-			tags: ['post'],
-		})) || ({} as any)
-	)
-}
-
-export async function getAllPostsSlugs(): Promise<Pick<Post, 'slug'>[]> {
-	const slugs =
-		(await sanityFetch<string[]>({
-			query: postSlugsQuery,
-			tags: ['post'],
-		})) || []
-	return slugs.map(slug => ({ slug }))
 }
