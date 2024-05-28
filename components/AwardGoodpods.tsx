@@ -8,6 +8,8 @@ import styles from './AwardGoodpods.module.css'
 export default async function AwardGoodpods() {
 	const awards = await getAwards()
 
+	console.log('AwardGoodpods.awards', awards)
+
 	if (!awards || !awards.length) {
 		return null
 	}

@@ -13,6 +13,7 @@ type SanityFetchProps = {
 }
 
 async function sanityFetch<QueryResponse>({ query, params = {}, tags }: SanityFetchProps) {
+	console.log('sanityFetch.awards', { query, tags })
 	return sanityClient.fetch<QueryResponse>(query, params, {
 		next: {
 			tags,
