@@ -11,8 +11,12 @@ export default function AwardGoodpods() {
 	}
 
 	return (
-		<a href={goodpodsUrl} target="_blank" className={styles.container}>
-			<Image src={goodpodsBadgeUrl} alt="goodpods" width={250} height={77} className={styles.img} />
-		</a>
+		<div className={'pageRow'}>
+			<div className="bubbled">
+				<a href={goodpodsUrl} target="_blank" className={styles.container}>
+					<Image src={goodpodsBadgeUrl} alt="goodpods" width={250} height={77} className={styles.img} />
+				</a>
+			</div>
+		</div>
 	)
 }

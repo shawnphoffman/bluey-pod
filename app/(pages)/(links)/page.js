@@ -39,11 +39,7 @@ export default async function Home() {
 					)
 				})}
 			</div>
-			<div className={'pageRow'}>
-				<div className="bubbled">
-					<AwardGoodpods />
-				</div>
-			</div>
+			<AwardGoodpods />
 
 			<div className={'pageRow'}>
 				<Reviews />
