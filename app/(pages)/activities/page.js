@@ -1,10 +1,10 @@
 import Image from 'next/image'
 
-import colorAmanda from 'app/images/coloring/color_amanda.png'
-import colorEric from 'app/images/coloring/color_eric.png'
-import colorGuitar from 'app/images/coloring/color_guitar.png'
-import colorHenry from 'app/images/coloring/color_henry.png'
-import colorStella from 'app/images/coloring/color_stella.png'
+import colorAmanda from '@/app/images/coloring/color_amanda.png'
+import colorEric from '@/app/images/coloring/color_eric.png'
+import colorGuitar from '@/app/images/coloring/color_guitar.png'
+import colorHenry from '@/app/images/coloring/color_henry.png'
+import colorStella from '@/app/images/coloring/color_stella.png'
 
 const coloringPages = [
 	{
