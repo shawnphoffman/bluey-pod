@@ -56,23 +56,19 @@ const Episodes = ({ episodes }) => {
 	}, [deferredSearch, episodes, fuse])
 
 	return (
-		<>
-			<div className="w-full mb-4">
-				<input
-					type="text"
-					id="first_name"
-					className="block w-full px-4 py-2 text-base leading-5 text-white border rounded-lg placeholder-neutral-500 border-neutral-500 bg-neutral-900 focus:border-neutral-500 focus-visible:outline-brand2  focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-2"
-					placeholder="Search"
-					onChange={handleSearch}
-				/>
-			</div>
-
-			<div className="flex flex-col items-center w-full border-t divide-y divide-brand2 border-t-brand2">
+		<div className="flex flex-col items-center w-full max-w-screen-md">
+			<input
+				type="text"
+				className="block w-full p-4 m-0 mb-4 text-xl font-bold leading-tight border-0 select-all bubbled text-start indent-0 transform-none placeholder:text-offText/50 focus:outline-none read-only:select-all"
+				placeholder="Search"
+				onChange={handleSearch}
+			/>
+			<div className="flex flex-col items-center w-full divide-y-2 bubbled divide-offBg">
 				<Suspense fallback={<Loading />}>
 					<EpisodeList episodes={filtered} />
 				</Suspense>
 			</div>
-		</>
+		</div>
 	)
 }
 
