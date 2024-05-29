@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 
 import AwardGoodpods from '@/components/AwardGoodpods'
-import LinkCard from '@/components/LinkCard'
+import LinkCard from '@/components/core/LinkCard'
 import RatingsApple from '@/components/RatingsApple'
 import RatingsSpotify from '@/components/RatingsSpotify'
 import Reviews from '@/components/Reviews'
@@ -22,7 +22,7 @@ export default async function Home() {
 					<RatingsSpotify />
 				</Suspense>
 			</div>
-			<div className={'pageRow'}>
+			<div className={'pageRow gap-4'}>
 				{items.map((item, i) => {
 					return (
 						<LinkCard
@@ -39,9 +39,12 @@ export default async function Home() {
 					)
 				})}
 			</div>
-			<Suspense>
-				<AwardGoodpods />
-			</Suspense>
+
+			{process.env.NODE_ENV !== 'development' && (
+				<Suspense>
+					<AwardGoodpods />
+				</Suspense>
+			)}
 
 			<div className={'pageRow'}>
 				<Reviews />
