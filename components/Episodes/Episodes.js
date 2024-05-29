@@ -3,7 +3,7 @@
 import { memo, startTransition, Suspense, useCallback, useDeferredValue, useMemo, useState } from 'react'
 import Fuse from 'fuse.js'
 
-import Loading from '@/components/Loading'
+import Loading from '@/components/core/Loading'
 
 import Episode from './Episode'
 import styles from './Episodes.module.css'
@@ -57,7 +57,7 @@ const Episodes = ({ episodes }) => {
 		<>
 			<input className={`${styles.input} bubbled`} type="text" placeholder="Search" onChange={handleSearch} />
 			<div className={`${styles.episodesContainer} bubbled`}>
-				<Suspense fallback={<Loading label="episodes" />}>
+				<Suspense fallback={<Loading />}>
 					<EpisodeList episodes={filtered} />
 				</Suspense>
 			</div>

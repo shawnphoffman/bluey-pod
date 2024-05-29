@@ -39,6 +39,7 @@ export async function getSpotifyReviews() {
 export async function getEpisodes() {
 	console.log('FETCHING EPISODES')
 	try {
+		await new Promise(resolve => setTimeout(resolve, 5000))
 		const res = await fetch(rssFeedUrl, {
 			next: { revalidate: 60 * 60 * 1 },
 		})
