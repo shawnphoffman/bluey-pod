@@ -9,6 +9,7 @@ import Reviews from '@/components/core/Reviews'
 import items from './links'
 
 export default async function Home() {
+	// await new Promise(resolve => setTimeout(resolve, 5000))
 	return (
 		<>
 			<div className={'pageDescription bubbled'}>
