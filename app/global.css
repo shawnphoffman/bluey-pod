@@ -69,7 +69,7 @@ a:hover {
 
 /* XXX */
 
-.bubbled {
+/* .bubbled {
 	font-weight: 500;
 	background: var(--offTextBg);
 	color: var(--offText);
@@ -78,7 +78,7 @@ a:hover {
 	border: var(--offBorder);
 	-webkit-box-shadow: var(--offBoxShadow);
 	box-shadow: var(--offBoxShadow);
-}
+} */
 
 .wrapper {
 	display: flex;

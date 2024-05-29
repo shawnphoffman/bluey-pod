@@ -1,10 +1,10 @@
 import { Suspense } from 'react'
 
-import AwardGoodpods from '@/components/AwardGoodpods'
+import Awards from '@/components/core/Awards'
 import LinkCard from '@/components/core/LinkCard'
-import RatingsApple from '@/components/RatingsApple'
-import RatingsSpotify from '@/components/RatingsSpotify'
-import Reviews from '@/components/Reviews'
+import RatingsApple from '@/components/core/RatingsApple'
+import RatingsSpotify from '@/components/core/RatingsSpotify'
+import Reviews from '@/components/core/Reviews'
 
 import items from './links'
 
@@ -40,11 +40,11 @@ export default async function Home() {
 				})}
 			</div>
 
-			{process.env.NODE_ENV !== 'development' && (
-				<Suspense>
-					<AwardGoodpods />
-				</Suspense>
-			)}
+			{/* {process.env.NODE_ENV !== 'development' && ( */}
+			<Suspense>
+				<Awards />
+			</Suspense>
+			{/* )} */}
 
 			<div className={'pageRow'}>
 				<Reviews />

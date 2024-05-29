@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 import groupImg from '@/app/images/group-clean.png'
 import titleSvg from '@/app/images/title-solid.svg'
-import ActiveLink from '@/components/ActiveLink'
+import ActiveLink from '@/components/core/ActiveLink'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
 
@@ -40,7 +40,7 @@ export default async function RootLayout({ children }) {
 							<div className={'header'}>
 								<Image className={'imageFamily'} alt="" src={groupImg} width={300} priority />
 								<Image className={'imageTitle'} alt="Dinner with the Heelers" src={titleSvg} width={300} priority />
-								<div className="navContainer bubbled">
+								<div className="navContainer bubbled gap-x-4">
 									<ActiveLink href="/" label="Links" />
 									<ActiveLink href="/episodes" label="Episodes" />
 									<ActiveLink href="/activities" label="Activities" />
