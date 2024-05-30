@@ -455,10 +455,10 @@
     eslint-plugin-import "^2.27.5"
     eslint-plugin-simple-import-sort "^10.0.0"
 
-"@shawnphoffman/pod-sites-common@^0.0.2":
-  version "0.0.2"
-  resolved "https://npm.pkg.github.com/download/@shawnphoffman/pod-sites-common/0.0.2/e6252ec31c8e75fb38e9e709f8926c00589d13fd#e6252ec31c8e75fb38e9e709f8926c00589d13fd"
-  integrity sha512-qNGvEw1vNHuDAIbYgRFRnHzr0+fRfNUamxMGXgzgMf1ZHvytJvAObu+JuajPmg6cy9MSecOmfLr/hIFKIJHiQA==
+"@shawnphoffman/pod-sites-common@^0.0.5":
+  version "0.0.5"
+  resolved "https://npm.pkg.github.com/download/@shawnphoffman/pod-sites-common/0.0.5/2bbc6e6f9aaa897dd064da8c1635c6772b7f1c59#2bbc6e6f9aaa897dd064da8c1635c6772b7f1c59"
+  integrity sha512-nRqAocrxNYGsfCnfnp/uNiKqm38HC61RPZ5vB20bdFEEG8UiZ24j5IqfP3pcV5Y4tm5JNLIrNgwGs/+ovpEPQw==
 
 "@shawnphoffman/prettier-config@^1.0.1":
   version "1.0.1"

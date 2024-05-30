@@ -20,7 +20,7 @@ const items = [
 	},
 	{
 		title: 'Apple Podcasts',
-		href: 'https://podcasts.apple.com/us/podcast/dinner-with-the-heelers/id1648081856',
+		href: applePodcastUrl,
 		icon: 'fa-solid fa-podcast',
 		background: 'bg-applepodcasts',
 	},
@@ -32,7 +32,7 @@ const items = [
 	},
 	{
 		title: 'Instagram',
-		href: 'https://www.instagram.com/theblueypodcast/',
+		href: 'https://www.instagram.com/theblueypodcast',
 		icon: 'fa-brands fa-instagram',
 		background: 'bg-instagram',
 	},
@@ -56,7 +56,7 @@ const items = [
 	},
 	{
 		title: 'Overcast',
-		href: 'https://overcast.fm/itunes1648081856/dinner-with-the-heelers',
+		href: `https://overcast.fm/itunes${applePodcastId}/dinner-with-the-heelers`,
 		icon: 'fak fa-overcast fa-lg',
 		background: 'bg-overcast',
 	},
@@ -103,6 +103,6 @@ const items = [
 		icon: 'fa-solid fa-palette',
 		background: 'bg-offText',
 	},
-]
+] as const
 
 export default items

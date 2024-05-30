@@ -8,7 +8,7 @@ export default function NotFound() {
 			<div className="flex flex-col w-full max-w-lg gap-2 p-4 px-8 mb-8 text-left border rounded-lg bubbled">
 				<h1 className="text-6xl font-bold text-offText">Uh oh...</h1>
 				<Link
-					href="/updates"
+					href="/"
 					className="flex flex-row items-center justify-center gap-2 text-2xl font-bold transition-colors ease-in text-brand1 w-fit hover:text-brand2"
 				>
 					<span>Return home</span>

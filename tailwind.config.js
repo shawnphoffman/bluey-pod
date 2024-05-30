@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin')
+const tailwindColors = require('@shawnphoffman/pod-sites-common/tailwind')
 
 // const bluey1 = '#edcc6f';
 // const bluey2 = '#d2ebff';
@@ -52,34 +53,10 @@ module.exports = {
 			boxShadow: {
 				brandShadow: offBoxShadow,
 			},
-			backgroundColor: {
-				applepodcasts: '#872ec4',
-				spotify: '#16883e',
-				twitter: '#0d7ac4',
-				teepublic: '#374ecd',
-				overcast: '#be5a01',
-				youtube: '#ee0000',
-				googlepodcasts: '#206ff2',
-				goodpods: '#fcdb00',
-				amazonmusic: '#0077c1',
-				iheart: '#c6002b',
-				pocketcasts: '#ea150d',
-				castbox: '#db3c0e',
-				zencastr: '#1474e0',
-				rss: '#ce4a0c',
-				facebook: '#0866ff',
-				bluesky: '#0560ff',
-				instagram: '#c13584',
-				etsy: '#f56400',
-				radiopublic: '#ce262f',
-				podbean: '#5f7e1b',
-				googlepodcasts: '#206ff2',
-				email: '#52565e',
-				tiktok: '#eb004a',
-			},
 		},
 	},
 	plugins: [
+		tailwindColors.default,
 		plugin(function ({ addComponents, theme }) {
 			addComponents({
 				'.bubble-border': {
@@ -98,39 +75,5 @@ module.exports = {
 				},
 			})
 		}),
-		// 		'.link': {
-		// 			backgroundImage: `linear-gradient(to right, ${theme('colors.brand2')}, ${theme('colors.brand2')} 50%, ${theme(
-		// 				'colors.brand1'
-		// 			)} 50%)`,
-		// 			backgroundSize: '200% 100%',
-		// 			backgroundPosition: '-100%',
-		// 			display: 'inline-block',
-		// 			position: 'relative',
-		// 			transition: 'all 0.2s ease-in-out',
-		// 			backgroundClip: 'text',
-		// 			WebkitTextFillColor: 'transparent',
-		// 			'&:hover': {
-		// 				backgroundPosition: '0',
-		// 			},
-		// 			'&::before': {
-		// 				content: '""',
-		// 				display: 'block',
-		// 				position: 'absolute',
-		// 				bottom: '0px',
-		// 				width: '0',
-		// 				height: '3px',
-		// 				transition: 'all 0.2s ease-in-out',
-		// 				left: '0',
-		// 				background: theme('colors.brand2'),
-		// 			},
-		// 			'&:hover::before': {
-		// 				width: '100%',
-		// 			},
-		// 			'&.text-white': {
-		// 				backgroundImage: `linear-gradient(to right, ${theme('colors.brand2')}, ${theme('colors.brand2')} 50%, ${theme(
-		// 					'colors.white'
-		// 				)} 50%)`,
-		// 			},
-		// 		},
 	],
 }
