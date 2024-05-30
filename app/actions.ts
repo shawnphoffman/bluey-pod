@@ -1,4 +1,4 @@
-'use server'
+import 'server-only'
 
 import { XMLParser } from 'fast-xml-parser'
 import { sanitize } from 'isomorphic-dompurify'
@@ -41,7 +41,8 @@ export async function getEpisodes() {
 	try {
 		// await new Promise(resolve => setTimeout(resolve, 5000))
 		const res = await fetch(rssFeedUrl, {
-			next: { revalidate: 60 * 60 * 1 },
+			// next: { revalidate: 60 * 60 * 1 },
+			next: { tags: ['episodes'] },
 		})
 		const xml = await res.text()
 		const parser = new XMLParser({

@@ -3,12 +3,6 @@
 @tailwind utilities;
 
 :root {
-	--bg: #000;
-	--white: #fff;
-	--applePodcasts: #872ec4;
-	--spotify: #16883e;
-	--yellow: rgb(237, 237, 55);
-
 	--bluey1: #edcc6f;
 	--bluey2: #d2ebff;
 	--bluey3: #88cafc;
@@ -57,28 +51,6 @@ body {
 	padding: 0px 16px 0px 16px;
 	overflow: scroll;
 }
-
-/* a {
-	transition: color 150ms ease-in;
-	color: var(--bluey10);
-	text-decoration: none;
-}
-a:hover {
-	color: var(--bluey9);
-} */
-
-/* XXX */
-
-/* .bubbled {
-	font-weight: 500;
-	background: var(--offTextBg);
-	color: var(--offText);
-	padding: 1rem;
-	border-radius: var(--offBorderRadius);
-	border: var(--offBorder);
-	-webkit-box-shadow: var(--offBoxShadow);
-	box-shadow: var(--offBoxShadow);
-} */
 
 .wrapper {
 	display: flex;
@@ -138,22 +110,11 @@ a:hover {
 	width: 100%;
 }
 
-/*  */
-
 .header {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
-
-.iframe {
-	width: 100%;
-	overflow: hidden;
-	border-radius: 10px;
-	background: transparent;
-	border: none;
-	border-radius: 12px;
 }
 
 .imageFamily {
@@ -166,43 +127,6 @@ a:hover {
 .imageTitle {
 	position: relative;
 	top: -20px;
-}
-
-.activities {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-}
-
-.activityTitle {
-	font-size: 1.5rem;
-	margin-bottom: 0.5rem;
-	font-weight: 700;
-}
-
-.activityList {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	overflow: hidden;
-	flex-wrap: wrap;
-}
-
-.activity {
-	padding: 0.5rem;
-	display: flex;
-	flex-direction: column;
-}
-
-.activityLink {
-	background-color: var(--bluey4);
-	color: var(--offWhite);
-	padding: 8px;
-	border-radius: 2rem;
-	margin: 4px;
-	align-self: center;
-	width: 4rem;
-	line-height: 1;
 }
 
 .navContainer {
@@ -221,11 +145,4 @@ a:hover {
 	flex-wrap: wrap;
 	justify-content: center;
 	margin-bottom: 0.25rem;
-}
-.episodesContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	max-width: 720px;
-	width: 100%;
 }

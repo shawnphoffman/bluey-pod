@@ -10,7 +10,6 @@ export const dynamic = 'force-dynamic'
 const EpisodesClient = async () => {
 	const [data] = await Promise.all([
 		getEpisodes(),
-		//
 		// new Promise(resolve => setTimeout(resolve, 100000)),
 	])
 
