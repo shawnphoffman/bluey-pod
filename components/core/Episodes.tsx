@@ -59,11 +59,11 @@ const Episodes = ({ episodes }) => {
 		<div className="flex flex-col items-center w-full max-w-screen-md">
 			<input
 				type="text"
-				className="block w-full px-4 py-2 m-0 mb-4 text-xl font-bold leading-tight select-all bubbled text-start indent-0 transform-none placeholder:text-offText/50 focus:outline-none read-only:select-all"
+				className="block w-full px-4 py-2 m-0 mb-4 text-xl font-bold leading-tight select-all bubbled text-start indent-0 transform-none placeholder:text-brandText/50 focus:outline-none read-only:select-all"
 				placeholder="Search"
 				onChange={handleSearch}
 			/>
-			<div className="flex flex-col items-center w-full divide-y-2 bubbled divide-offBg">
+			<div className="flex flex-col items-center w-full divide-y-2 bubbled divide-brandBackground">
 				<Suspense fallback={<Loading />}>
 					<EpisodeList episodes={filtered} />
 				</Suspense>

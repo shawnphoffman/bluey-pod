@@ -47,7 +47,7 @@ export default async function Activities() {
 							<Link
 								href={coloringPage.png}
 								target="_blank"
-								className={'bg-brand3 text-white p-2 rounded-[2rem] m-1 self-center w-16 leading-none'}
+								className={'bg-brandText text-white p-2 rounded-[2rem] m-1 self-center w-16 leading-none'}
 								prefetch={false}
 							>
 								PNG
@@ -55,7 +55,7 @@ export default async function Activities() {
 							<Link
 								href={coloringPage.pdf}
 								target="_blank"
-								className={'bg-brand3 text-white p-2 rounded-[2rem] m-1 self-center w-16 leading-none'}
+								className={'bg-brandText text-white p-2 rounded-[2rem] m-1 self-center w-16 leading-none'}
 								prefetch={false}
 							>
 								PDF

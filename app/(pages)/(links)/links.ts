@@ -111,7 +111,7 @@ const items: LinkItem[] = [
 		title: 'Family Portraits',
 		href: 'https://www.instagram.com/blueyfamilyportraits/',
 		icon: 'fa-solid fa-palette',
-		background: 'bg-offText',
+		background: 'bg-brandText',
 	},
 ] as const
 

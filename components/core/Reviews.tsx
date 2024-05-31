@@ -32,11 +32,11 @@ export default async function Reviews() {
 		<div className="flex flex-row flex-wrap justify-center w-full max-w-full bubbled">
 			<div className="mt-0 mb-3 text-2xl font-bold">Recent Reviews</div>
 			{filteredReviews.map((r: Review) => (
-				<div key={r.title} className="flex flex-col justify-start w-full gap-1 p-2 text-base text-left border-t-2 border-t-offBg">
+				<div key={r.title} className="flex flex-col justify-start w-full gap-1 p-2 text-base text-left border-t-2 border-t-brandBackground">
 					<div className="flex flex-row items-center justify-between">
 						<div className="flex flex-col items-start gap-1 sm:gap-4 sm:flex-row sm:items-center">
 							<div className="font-bold">{`"${r.title}"`}</div>
-							{/* <div className="text-xs italic text-brand1"> {r.author}</div> */}
+							{/* <div className="text-xs italic text-brandOrange"> {r.author}</div> */}
 						</div>
 						<Stars count={r.stars} />
 					</div>

@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }) {
 	return (
-		<html lang="en" className={`${openSans.className} box-border h-full p-0 m-0 text-base bg-offBg w-dvw`}>
+		<html lang="en" className={`${openSans.className} box-border h-full p-0 m-0 text-base bg-brandBackground w-dvw`}>
 			<head>
 				<meta name="apple-itunes-app" content="app-id=1648081856" />
 			</head>
