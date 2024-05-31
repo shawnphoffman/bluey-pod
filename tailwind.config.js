@@ -31,7 +31,7 @@ module.exports = {
 				},
 				'.bubbled': {
 					fontWeight: theme('fontWeight.medium'),
-					background: `rgb(255 255 255 / 0.7)`,
+					background: `rgb(255 255 255 / 0.85)`,
 					color: theme('colors.brandText'),
 					padding: theme('spacing.4'),
 					borderRadius: theme('borderRadius.2xl'),
