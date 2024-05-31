@@ -1,12 +1,30 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { getSpotifyReviews } from '@/app/actions'
+import { spotifyUrl } from '@/app/(pages)/(links)/links'
+
+type SpotifyRating = {
+	url: string
+	rating: number
+	ratingCount?: number
+}
 
 export default async function RatingsSpotify() {
-	const spotifyData = await getSpotifyReviews()
+	// await new Promise(resolve => setTimeout(resolve, 5000))
 
-	if (!spotifyData || !spotifyData.rating) return null
+	let spotifyData: SpotifyRating
+	try {
+		const res = await fetch(`https://api.shawn.party/api/pod-data/spotify?url=${spotifyUrl}`, {
+			next: { revalidate: 60 * 60 * 1 },
+		})
+		spotifyData = await res.json()
+	} catch {
+		return null
+	}
+
+	if (!spotifyData?.rating) {
+		return null
+	}
 
 	return (
 		<a
@@ -16,7 +34,7 @@ export default async function RatingsSpotify() {
 			rel="noopener noreferrer"
 		>
 			<div>{spotifyData.rating.toFixed(1)}</div>
-			<FontAwesomeIcon icon={'fa-solid fa-star-sharp' as IconProp} className="text-[0.65rem] mx-0.5" />
+			<FontAwesomeIcon icon={'fa-solid fa-star-sharp' as IconProp} className="text-xs mx-0.5" />
 			<div>on Spotify</div>
 		</a>
 	)

@@ -9,7 +9,7 @@ import Reviews from '@/components/core/Reviews'
 import items from './links'
 
 export default async function Home() {
-	// await new Promise(resolve => setTimeout(resolve, 5000))
+	// await new Promise(resolve => setTimeout(resolve, 2000))
 	return (
 		<>
 			<div className={'text-base sm:text-lg w-full max-w-screen-md bubbled'}>
@@ -18,8 +18,8 @@ export default async function Home() {
 				from. It&apos;s good family fun for anyone who loves Bluey.
 			</div>
 
-			<Suspense>
-				<div className="flex flex-row flex-wrap items-center justify-center gap-2">
+			<Suspense fallback={<div className="h-10" />}>
+				<div className="flex flex-row flex-wrap items-center justify-center gap-3">
 					<RatingsApple />
 					<RatingsSpotify />
 				</div>
