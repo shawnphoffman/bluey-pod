@@ -29,7 +29,7 @@ export default async function Reviews() {
 	if (!filteredReviews || !filteredReviews.length) return null
 
 	return (
-		<div className="max-w-full bubbled">
+		<div className="flex flex-row flex-wrap justify-center w-full max-w-full bubbled">
 			<div className="mt-0 mb-3 text-2xl font-bold">Recent Reviews</div>
 			{filteredReviews.map((r: Review) => (
 				<div key={r.title} className="flex flex-col justify-start w-full gap-1 p-2 text-base text-left border-t-2 border-t-offBg">

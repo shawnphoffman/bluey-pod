@@ -51,7 +51,7 @@ export default async function RootLayout({ children }) {
 						</div>
 					</div>
 				</div>
-				<Analytics />
+				{process.env.VERCEL_ENV === 'production' && <Analytics />}
 			</body>
 		</html>
 	)

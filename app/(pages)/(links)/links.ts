@@ -5,7 +5,15 @@ export const applePodcastUrl = `https://podcasts.apple.com/us/podcast/id${appleP
 export const appleRatingUrl = `${applePodcastUrl}?see-all=reviews`
 export const rssFeedUrl = 'https://anchor.fm/s/bdcbfb70/podcast/rss'
 
-const items = [
+type LinkItem = {
+	title: string
+	href: string
+	icon: string
+	background: string
+	color?: string
+}
+
+const items: LinkItem[] = [
 	{
 		title: 'Twitter',
 		href: 'https://twitter.com/theblueypodcast',

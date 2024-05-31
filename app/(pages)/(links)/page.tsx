@@ -12,28 +12,27 @@ export default async function Home() {
 	// await new Promise(resolve => setTimeout(resolve, 5000))
 	return (
 		<>
-			<div className={'pageDescription bubbled'}>
+			<div className={'text-base sm:text-lg w-full max-w-screen-md bubbled'}>
 				Our family loves Bluey! Mom, Dad, and our two kids talk about each episode of Bluey, starting with the very first episode and
 				continuing in order as they appear on Disney+. We discuss the events of the episodes, plus touch on what lessons we&apos;ve learned
 				from. It&apos;s good family fun for anyone who loves Bluey.
 			</div>
-			<div className="ratingsWrapper">
-				<Suspense>
+
+			<Suspense>
+				<div className="flex flex-row flex-wrap items-center justify-center gap-2">
 					<RatingsApple />
 					<RatingsSpotify />
-				</Suspense>
-			</div>
-			<div className={'pageRow gap-4'}>
-				{items.map((item, i) => {
+				</div>
+			</Suspense>
+
+			<div className={'flex flex-row justify-center flex-wrap flex-1 w-full gap-4'}>
+				{items.map(item => {
 					return (
 						<LinkCard
-							i={i}
 							key={item.title}
 							title={item.title}
-							subtitle={item.subtitle}
 							link={item.href}
 							icon={item.icon}
-							cover={item.image}
 							bg={item.background}
 							color={item.color}
 						></LinkCard>
@@ -41,15 +40,13 @@ export default async function Home() {
 				})}
 			</div>
 
-			{/* {process.env.NODE_ENV !== 'development' && ( */}
 			<Suspense>
 				<Awards />
 			</Suspense>
-			{/* )} */}
 
-			<div className={'pageRow'}>
+			<Suspense>
 				<Reviews />
-			</div>
+			</Suspense>
 		</>
 	)
 }

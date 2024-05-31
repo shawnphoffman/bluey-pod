@@ -13,20 +13,18 @@ export default async function Awards() {
 	}
 
 	return (
-		<div className={'pageRow'}>
-			<div className="bubbled">
-				{awards.map(award =>
-					award.linkUrl ? (
-						<Link key={award._id} href={award.linkUrl} target="_blank" className={`flex flex-col items-center`}>
-							<Image src={award.imageUrl} alt="" width={award.width} height={award.height} />
-						</Link>
-					) : (
-						<div key={award._id} className={`flex flex-col items-center`}>
-							<Image src={award.imageUrl} alt="" width={award.width} height={award.height} />
-						</div>
-					)
-				)}
-			</div>
+		<div className="flex flex-row flex-wrap justify-center flex-1 bubbled">
+			{awards.map(award =>
+				award.linkUrl ? (
+					<Link key={award._id} href={award.linkUrl} target="_blank" className={`flex flex-col items-center`}>
+						<Image src={award.imageUrl} alt="" width={award.width} height={award.height} />
+					</Link>
+				) : (
+					<div key={award._id} className={`flex flex-col items-center`}>
+						<Image src={award.imageUrl} alt="" width={award.width} height={award.height} />
+					</div>
+				)
+			)}
 		</div>
 	)
 }
