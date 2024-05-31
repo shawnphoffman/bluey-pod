@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
 			return new Response(JSON.stringify({ message, body }), { status: 400 })
 		}
 
-		console.log('revalidate', body._type)
+		console.log(`revalidating: ${body._type}`)
 
 		// If the `_type` is `page`, then all `client.fetch` calls with
 		// `{next: {tags: ['page']}}` will be revalidated
