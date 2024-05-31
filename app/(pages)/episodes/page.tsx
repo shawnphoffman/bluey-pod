@@ -36,10 +36,7 @@ async function getEpisodes() {
 // NOTE Loading.tsx wraps Pages in Suspense but it seems to only work when it is nested and not the root Loading component
 
 export default async function EpisodesPage() {
-	const [data] = await Promise.all([
-		//
-		getEpisodes(),
-		// new Promise(resolve => setTimeout(resolve, 1000)),
-	])
+	// await new Promise(resolve => setTimeout(resolve, 5000))
+	const data = await getEpisodes()
 	return <Episodes episodes={data.episodes} />
 }
