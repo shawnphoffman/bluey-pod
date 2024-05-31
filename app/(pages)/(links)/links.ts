@@ -1,3 +1,5 @@
+import 'server-only'
+
 export const spotifyId = '01RC12mzSlrKmYYe2pjxgM'
 export const spotifyUrl = `https://open.spotify.com/show/${spotifyId}`
 export const applePodcastId = '1648081856'

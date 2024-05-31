@@ -1,9 +1,6 @@
 import 'server-only'
 
-import { XMLParser } from 'fast-xml-parser'
-import { sanitize } from 'isomorphic-dompurify'
-
-import { appleRatingUrl, rssFeedUrl, spotifyUrl } from './(pages)/(links)/links'
+import { appleRatingUrl, spotifyUrl } from './(pages)/(links)/links'
 
 export async function getAppleReviews() {
 	try {
@@ -32,37 +29,6 @@ export async function getSpotifyReviews() {
 		// console.log('getSpotifyReviews', data)
 		return data
 	} catch {
-		return {}
-	}
-}
-
-export async function getEpisodes() {
-	console.log('FETCHING EPISODES')
-	try {
-		// await new Promise(resolve => setTimeout(resolve, 5000))
-		const res = await fetch(rssFeedUrl, {
-			// next: { revalidate: 60 * 60 * 1 },
-			next: { tags: ['episodes'] },
-		})
-		const xml = await res.text()
-		const parser = new XMLParser({
-			ignoreAttributes: false,
-			attributeNamePrefix: '@_',
-		})
-		const parsed = parser.parse(xml)
-		const episodes = parsed.rss.channel.item.map(ep => ({
-			guid: ep.guid['#text'],
-			title: ep.title,
-			imgSrc: ep['itunes:image']['@_href'],
-			// summary: ep['itunes:summary'],
-			summary: sanitize(ep['itunes:summary'].replace(/<p><br><\/p>|\n/gim, '')),
-			link: ep.link,
-			pubDate: ep.pubDate,
-		}))
-		return {
-			episodes,
-		}
-	} catch (error) {
 		return {}
 	}
 }
