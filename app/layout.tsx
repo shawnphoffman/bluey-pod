@@ -28,27 +28,29 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 	return (
-		<html lang="en" style={{ fontFamily: openSans.style.fontFamily }}>
+		<html lang="en" className="box-border h-full p-0 m-0 text-base bg-offBg w-dvw" style={{ fontFamily: openSans.style.fontFamily }}>
 			<head>
-				{/* <script src="https://kit.fontawesome.com/d7ccc5bb1a.js" crossOrigin="anonymous" defer></script> */}
 				<meta name="apple-itunes-app" content="app-id=1648081856" />
 			</head>
-			<body>
-				<div className="scroller">
-					<div className={'wrapper'}>
-						<div className={'page'}>
-							<div className={'header'}>
-								<Image className={'imageFamily'} alt="" src={groupImg} width={300} priority />
-								<Image className={'imageTitle'} alt="Dinner with the Heelers" src={titleSvg} width={300} priority />
-								<div className="navContainer bubbled gap-x-4">
-									<ActiveLink href="/" label="Links" />
-									<ActiveLink href="/episodes" label="Episodes" />
-									<ActiveLink href="/activities" label="Activities" />
-									<ActiveLink href="/listen-now" label="Listen Now" />
-								</div>
+			<body className="h-full p-0 m-0 w-dvw">
+				{/* SCROLLER */}
+				<div className="w-full h-full px-3 mx-auto overflow-x-hidden overflow-y-scroll sm:px-4">
+					{/* CONTENT */}
+					<div className="flex flex-col w-full max-w-screen-lg min-h-screen gap-4 p-0 pb-4 mx-auto">
+						{/* HEADER */}
+						<div className="flex flex-col items-center text-center">
+							<Image className="relative -mb-8 max-sm:hidden top-1 -z-10" alt="" src={groupImg} width={300} priority />
+							<Image className="relative mb-4 sm:-mb-2 top-2 sm:-top-5" alt="Dinner with the Heelers" src={titleSvg} width={300} priority />
+							{/* NAV */}
+							<div className="flex flex-row flex-wrap justify-center bubbled gap-x-4">
+								<ActiveLink href="/" label="Links" />
+								<ActiveLink href="/episodes" label="Episodes" />
+								<ActiveLink href="/activities" label="Activities" />
+								<ActiveLink href="/listen-now" label="Listen Now" />
 							</div>
-							<div className={'pageDetails'}>{children}</div>
 						</div>
+						{/* PAGE CONTENT */}
+						<div className="flex flex-col items-center flex-1 gap-4 text-center">{children}</div>
 					</div>
 				</div>
 				{process.env.VERCEL_ENV === 'production' && <Analytics />}
