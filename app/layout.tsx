@@ -3,6 +3,7 @@ import '@/app/(pages)/icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import { Analytics } from '@vercel/analytics/react'
+import { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
 import Image from 'next/image'
 
@@ -12,15 +13,28 @@ import ActiveLink from '@/components/core/ActiveLink'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
 
-export const metadata = {
-	title: 'Dinner with the Heelers',
-	description:
-		"Our family loves Bluey! Mom, Dad, and our two kids talk about each episode of Bluey, starting with the very first episode and continuing in order as they appear on Disney+. We discuss the events of the episodes, plus touch on what lessons we've learned from. It's good family fun for anyone who loves Bluey.",
-	metadataBase: 'https://theblueypodcast.com',
+const title = 'Dinner with the Heelers'
+const description =
+	"Our family loves Bluey! Mom, Dad, and our two kids talk about each episode of Bluey, starting with the very first episode and continuing in order as they appear on Disney+. We discuss the events of the episodes, plus touch on what lessons we've learned from. It's good family fun for anyone who loves Bluey."
+const url = new URL('https://blueypodcast.com')
+const keywords = (process.env.NEXT_PUBLIC_KEYWORDS ?? '').split(',').map(keyword => keyword.trim())
+
+export const metadata: Metadata = {
+	title: {
+		template: `%s | ${title}`,
+		default: title,
+	},
+	description,
+	metadataBase: url,
+	alternates: {
+		canonical: url,
+	},
+	keywords,
 	openGraph: {
-		title: 'Dinner with the Heelers: The Bluey Podcast',
-		description: '',
-		url: 'https://theblueypodcast.com',
+		title: `${title}: A Bluey Podcast`,
+		description,
+		siteName: title,
+		url,
 		locale: 'en_US',
 		type: 'website',
 	},
@@ -28,7 +42,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 	return (
-		<html lang="en" className="box-border h-full p-0 m-0 text-base bg-offBg w-dvw" style={{ fontFamily: openSans.style.fontFamily }}>
+		<html lang="en" className={`${openSans.className} box-border h-full p-0 m-0 text-base bg-offBg w-dvw`}>
 			<head>
 				<meta name="apple-itunes-app" content="app-id=1648081856" />
 			</head>
