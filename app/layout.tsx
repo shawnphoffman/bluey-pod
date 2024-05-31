@@ -17,7 +17,7 @@ const title = 'Dinner with the Heelers'
 const description =
 	"Our family loves Bluey! Mom, Dad, and our two kids talk about each episode of Bluey, starting with the very first episode and continuing in order as they appear on Disney+. We discuss the events of the episodes, plus touch on what lessons we've learned from. It's good family fun for anyone who loves Bluey."
 const url = new URL('https://blueypodcast.com')
-const keywords = (process.env.NEXT_PUBLIC_KEYWORDS ?? '').split(',').map(keyword => keyword.trim())
+const keywords = (process.env.META_KEYWORDS ?? '').split(',').map(keyword => keyword.trim())
 
 export const metadata: Metadata = {
 	title: {
