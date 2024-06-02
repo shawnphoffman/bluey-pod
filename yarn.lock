@@ -445,6 +445,11 @@
     scroll-into-view-if-needed "^3.1.0"
     valibot "0.30.0"
 
+"@sbj42/word-search-generator@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@sbj42/word-search-generator/-/word-search-generator-0.1.2.tgz#21b4c3c2879fe3b285b21ddaff23da003b81b5e0"
+  integrity sha512-Mx5oqvZnDa2EoEvgeznpxpQdah/dw3W58LzwUwE9MIbxs4G17Y6r59DddTB+K9bck3sJYJlAygAjloWpvH88Dg==
+
 "@shawnphoffman/eslint-config@^1.0.4":
   version "1.0.4"
   resolved "https://npm.pkg.github.com/download/@shawnphoffman/eslint-config/1.0.4/83329423570cc864f7fb3f2feff12bfaab36e3ac#83329423570cc864f7fb3f2feff12bfaab36e3ac"
