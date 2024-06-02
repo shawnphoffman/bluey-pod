@@ -16,7 +16,7 @@ export default async function Awards() {
 		<div className="flex flex-row flex-wrap justify-center flex-1 bubbled">
 			{awards.map(award =>
 				award.linkUrl ? (
-					<Link key={award._id} href={award.linkUrl} target="_blank" className={`flex flex-col items-center`}>
+					<Link key={award._id} href={award.linkUrl} target="_blank" className={`flex flex-col items-center`} aria-label={award.name}>
 						<Image src={award.imageUrl} alt="" width={award.width} height={award.height} />
 					</Link>
 				) : (
