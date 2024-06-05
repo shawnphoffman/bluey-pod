@@ -7,6 +7,7 @@ import colorGuitar from '@/app/images/coloring/color_guitar.png'
 import colorHenry from '@/app/images/coloring/color_henry.png'
 import colorStella from '@/app/images/coloring/color_stella.png'
 import Puzzle from '@/components/core/Puzzle'
+import PuzzleWrapper from '@/components/core/PuzzleWrapper'
 
 export const revalidate = 604800 // in seconds
 
@@ -71,8 +72,11 @@ export default async function Activities() {
 			</div>
 
 			<div className={'flex-col gap-4 w-fit bubbled hidden md:flex'}>
-				<div className={'text-2xl font-bold'}>Word Search</div>
-				<Puzzle />
+				<PuzzleWrapper>
+					<div className={'flex-col gap-4 w-full flex items-center justify-center h-full'}>
+						<Puzzle />
+					</div>
+				</PuzzleWrapper>
 			</div>
 		</>
 	)
