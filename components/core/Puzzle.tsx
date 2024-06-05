@@ -11,6 +11,10 @@ export default function Puzzle() {
 		minLength: 3,
 		maxLength: undefined,
 		words: [
+			'Eric',
+			'Henry',
+			'Amanda',
+			'Stella',
 			'Bluey',
 			'Bingo',
 			'Bandit',

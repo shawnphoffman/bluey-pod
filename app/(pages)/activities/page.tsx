@@ -8,6 +8,8 @@ import colorHenry from '@/app/images/coloring/color_henry.png'
 import colorStella from '@/app/images/coloring/color_stella.png'
 import Puzzle from '@/components/core/Puzzle'
 
+export const revalidate = 604800 // in seconds
+
 const coloringPages = [
 	{
 		import: colorHenry,
