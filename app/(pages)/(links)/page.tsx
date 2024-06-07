@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 import Awards from '@/components/core/Awards'
 import LinkCard from '@/components/core/LinkCard'
 import RatingsApple from '@/components/core/RatingsApple'
+import RatingsGoodpods from '@/components/core/RatingsGoodpods'
 import RatingsSpotify from '@/components/core/RatingsSpotify'
 import Reviews from '@/components/core/Reviews'
 
@@ -21,6 +22,7 @@ export default async function Home() {
 			<Suspense fallback={<div className="h-10" />}>
 				<div className="flex flex-row flex-wrap items-center justify-center gap-3">
 					<RatingsApple />
+					<RatingsGoodpods />
 					<RatingsSpotify />
 				</div>
 			</Suspense>

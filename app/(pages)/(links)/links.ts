@@ -6,6 +6,7 @@ export const applePodcastId = '1648081856'
 export const applePodcastUrl = `https://podcasts.apple.com/us/podcast/id${applePodcastId}`
 export const appleRatingUrl = `${applePodcastUrl}?see-all=reviews`
 export const rssFeedUrl = 'https://anchor.fm/s/bdcbfb70/podcast/rss'
+export const goodpodsUrl = 'https://goodpods.com/podcasts/dinner-with-the-heelers-277737'
 
 type LinkItem = {
 	title: string
@@ -78,7 +79,7 @@ const items: LinkItem[] = [
 	},
 	{
 		title: 'Goodpods',
-		href: 'https://goodpods.com/podcasts/dinner-with-the-heelers-277737',
+		href: goodpodsUrl,
 		icon: 'fak fa-goodpods',
 		background: 'bg-goodpods',
 		color: 'text-black',

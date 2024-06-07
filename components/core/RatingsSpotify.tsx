@@ -28,7 +28,7 @@ export default async function RatingsSpotify() {
 
 	return (
 		<a
-			className="flex flex-row items-center px-2 py-1 text-base font-bold leading-normal text-white border-4 rounded-lg bubble-border whitespace-nowrap bg-spotify"
+			className="flex flex-row items-center px-2 py-1 text-sm font-bold leading-normal text-white border-4 rounded-lg bubble-border whitespace-nowrap bg-spotify"
 			href={spotifyData.url || ''}
 			target="_blank"
 			rel="noopener noreferrer"
