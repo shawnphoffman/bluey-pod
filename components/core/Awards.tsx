@@ -13,7 +13,7 @@ export default async function Awards() {
 	}
 
 	return (
-		<div className="flex flex-row flex-wrap justify-center flex-1 bubbled">
+		<div className="flex flex-row flex-wrap justify-center flex-1 gap-2 gap-y-0.5 items-center bubbled">
 			{awards.map(award =>
 				award.linkUrl ? (
 					<Link key={award._id} href={award.linkUrl} target="_blank" className={`flex flex-col items-center`} aria-label={award.name}>
