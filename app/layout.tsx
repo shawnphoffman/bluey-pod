@@ -53,8 +53,9 @@ export default async function RootLayout({ children }) {
 					<div className="flex flex-col w-full max-w-screen-lg min-h-screen gap-4 p-0 pb-4 mx-auto">
 						{/* HEADER */}
 						<div className="flex flex-col items-center text-center">
+							<h1 className="sr-only">{title}</h1>
 							<Image className="relative -mb-8 max-sm:hidden top-1 -z-10" alt="" src={groupImg} width={300} priority />
-							<Image className="relative mb-4 sm:-mb-2 top-2 sm:-top-5" alt="Dinner with the Heelers" src={titleSvg} width={300} priority />
+							<Image className="relative mb-4 sm:-mb-2 top-2 sm:-top-5" alt="" src={titleSvg} width={300} priority />
 							{/* NAV */}
 							<div className="flex flex-row flex-wrap justify-center bubbled gap-x-4">
 								<ActiveLink href="/" label="Links" />
@@ -64,7 +65,7 @@ export default async function RootLayout({ children }) {
 							</div>
 						</div>
 						{/* PAGE CONTENT */}
-						<div className="flex flex-col items-center flex-1 gap-4 text-center">{children}</div>
+						<main className="flex flex-col items-center flex-1 gap-4 text-center">{children}</main>
 					</div>
 				</div>
 				{process.env.VERCEL_ENV === 'production' && <Analytics />}
