@@ -1,7 +1,7 @@
 import { generate } from '@sbj42/word-search-generator'
 
 const height = 15
-const width = 15
+const width = 20
 
 export default function Puzzle() {
 	const options = {
@@ -27,31 +27,14 @@ export default function Puzzle() {
 			'Rusty',
 			'Mackenzie',
 			'Indy',
-			'Honey',
-			'Jack',
-			'Chloe',
-			'Lila',
-			'Buddy',
 			'Calypso',
-			'Luckys Dad',
-			'Judo',
 			'Winton',
-			'Pretzel',
 			'JeanLuc',
-			'Alfie',
-			'Missy',
 			'Frisky',
 			'Uncle Stripe',
-			'Nana',
-			'Grandad',
 			'Uncle Rad',
 			'Trixie',
-			'Gruber',
-			'Bella',
 			'Calypso',
-			'Wendy',
-			'Doreen',
-			'Fido',
 		],
 	}
 
