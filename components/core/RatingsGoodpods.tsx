@@ -6,7 +6,7 @@ import { goodpodsUrl } from '@/app/(pages)/(links)/links'
 export async function getGoodpodsReviews() {
 	try {
 		const res = await fetch(`https://api.shawn.party/api/pod-data/goodpods?url=${goodpodsUrl}`, {
-			next: { revalidate: 60 * 60 * 6 },
+			next: { revalidate: 3600 },
 		})
 		const data = await res.json()
 		// console.log('getGoodpodsReviews', data)

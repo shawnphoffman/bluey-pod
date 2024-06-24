@@ -15,7 +15,7 @@ export default async function RatingsSpotify() {
 	let spotifyData: SpotifyRating
 	try {
 		const res = await fetch(`https://api.shawn.party/api/pod-data/spotify?url=${spotifyUrl}`, {
-			next: { revalidate: 60 * 60 * 1 },
+			next: { revalidate: 3600 },
 		})
 		spotifyData = await res.json()
 	} catch {
