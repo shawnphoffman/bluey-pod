@@ -5,7 +5,7 @@ import { spotifyUrl } from '@/app/(pages)/(links)/links'
 
 type SpotifyRating = {
 	url: string
-	rating: number
+	rating?: number
 	ratingCount?: number
 }
 
@@ -14,11 +14,17 @@ export default async function RatingsSpotify() {
 
 	let spotifyData: SpotifyRating
 	try {
-		const res = await fetch(`https://api.shawn.party/api/pod-data/spotify?url=${spotifyUrl}`, {
-			next: { revalidate: 3600 },
+		const res = await fetch(`https://api.shawn.party/api/pod-data/spotify-scrape?url=${spotifyUrl}`, {
+			next: { revalidate: 60 * 60 * 6 },
 		})
-		spotifyData = await res.json()
-	} catch {
+		const data = await res.json()
+		// console.log('Spotify data', data)
+		spotifyData = {
+			url: data?.url,
+			rating: data?.vals?.rating ? Number(data?.vals?.rating) : undefined,
+		}
+	} catch (error) {
+		console.error('Failed to fetch Spotify data', error)
 		return null
 	}
 
