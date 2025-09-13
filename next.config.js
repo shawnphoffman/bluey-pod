@@ -3,6 +3,12 @@ module.exports = {
 		remotePatterns: [
 			{
 				protocol: 'https',
+				hostname: 'd3wo5wojvuv7l.cloudfront.net',
+				port: '',
+				pathname: '/**',
+			},
+			{
+				protocol: 'https',
 				hostname: 'd3t3ozftmdmh3i.cloudfront.net',
 				port: '',
 				pathname: '/**',

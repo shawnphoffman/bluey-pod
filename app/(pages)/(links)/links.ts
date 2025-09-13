@@ -5,7 +5,8 @@ export const spotifyUrl = `https://open.spotify.com/show/${spotifyId}`
 export const applePodcastId = '1648081856'
 export const applePodcastUrl = `https://podcasts.apple.com/us/podcast/id${applePodcastId}`
 export const appleRatingUrl = `${applePodcastUrl}?see-all=reviews`
-export const rssFeedUrl = 'https://anchor.fm/s/bdcbfb70/podcast/rss'
+export const rssFeedUrl = 'https://www.spreaker.com/show/6729926/episodes/feed'
+// export const rssFeedUrl = 'https://anchor.fm/s/bdcbfb70/podcast/rss'
 export const goodpodsUrl = 'https://goodpods.com/podcasts/dinner-with-the-heelers-277737'
 
 type LinkItem = {
