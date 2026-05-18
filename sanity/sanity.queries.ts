@@ -7,5 +7,5 @@ const podId = '386d4bf9-2128-40ae-bdae-22e23696f5bb'
 // =======================
 export const AWARDS_QUERY =
 	process.env.VERCEL_ENV === 'production'
-		? groq`*[_type == "award" && category._ref == "${podId}" && active==true]`
+		? groq`*[_type == "award" && category._ref == "${podId}" && active==true && (!defined(expiresAt) || expiresAt > now())]`
 		: groq`*[_type == "award" && category._ref == "${podId}"]`
