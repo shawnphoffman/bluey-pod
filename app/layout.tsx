@@ -4,8 +4,10 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import { Analytics } from '@vercel/analytics/react'
 import { Metadata } from 'next'
+import { draftMode } from 'next/headers'
 import { Open_Sans } from 'next/font/google'
 import Image from 'next/image'
+import { VisualEditing } from 'next-sanity/visual-editing'
 
 import groupImg from '@/app/images/group-clean.png'
 import titleSvg from '@/app/images/title-solid.svg'
@@ -41,6 +43,7 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({ children }) {
+	const { isEnabled: isDraftMode } = await draftMode()
 	return (
 		<html lang="en" className={`${openSans.className} box-border h-full p-0 m-0 text-base bg-brandBackground w-dvw`}>
 			<head>
@@ -69,6 +72,7 @@ export default async function RootLayout({ children }) {
 					</div>
 				</div>
 				{process.env.VERCEL_ENV === 'production' && <Analytics />}
+				{isDraftMode && <VisualEditing />}
 			</body>
 		</html>
 	)
