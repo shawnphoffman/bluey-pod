@@ -1,16 +1,22 @@
+import { faStarSharp } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
 import { Suspense } from 'react'
 
-import Awards from '@/components/core/AwardsScrape'
+import { AwardsScrape, RatingsApple, RatingsGoodpods, RatingsSpotify } from '@shawnphoffman/pod-sites-shared/ratings'
+
+import { getAppleReviews } from '@/app/actions'
 import LinkCard from '@/components/core/LinkCard'
-import RatingsApple from '@/components/core/RatingsApple'
-import RatingsGoodpods from '@/components/core/RatingsGoodpods'
-import RatingsSpotify from '@/components/core/RatingsSpotify'
 import Reviews from '@/components/core/Reviews'
 
-import items from './links'
+import items, { appleRatingUrl, goodpodsUrl, spotifyUrl } from './links'
+
+const appleClassName =
+	'flex flex-row items-center px-2 py-1 text-sm font-bold leading-normal text-white border-4 rounded-lg whitespace-nowrap bg-applepodcasts bubble-border'
+const goodpodsClassName =
+	'flex flex-row items-center px-2 py-1 text-sm font-bold leading-normal text-black border-4 rounded-lg whitespace-nowrap bg-goodpods bubble-border'
+const spotifyClassName =
+	'flex flex-row items-center px-2 py-1 text-sm font-bold leading-normal text-white border-4 rounded-lg bubble-border whitespace-nowrap bg-spotify'
 
 export default async function Home() {
-	// await new Promise(resolve => setTimeout(resolve, 2000))
 	return (
 		<>
 			<div className={'text-base sm:text-lg w-full max-w-screen-md bubbled'}>
@@ -21,9 +27,14 @@ export default async function Home() {
 
 			<Suspense fallback={<div className="h-10" />}>
 				<div className="flex flex-row flex-wrap items-center justify-center gap-3">
-					<RatingsApple />
-					<RatingsGoodpods />
-					<RatingsSpotify />
+					<RatingsApple
+						appleRatingUrl={appleRatingUrl}
+						getReviews={getAppleReviews}
+						className={appleClassName}
+						starIcon={faStarSharp}
+					/>
+					<RatingsGoodpods goodpodsUrl={goodpodsUrl} className={goodpodsClassName} starIcon={faStarSharp} />
+					<RatingsSpotify spotifyUrl={spotifyUrl} className={spotifyClassName} starIcon={faStarSharp} />
 				</div>
 			</Suspense>
 
@@ -43,7 +54,7 @@ export default async function Home() {
 			</div>
 
 			<Suspense>
-				<Awards />
+				<AwardsScrape goodpodsUrl={goodpodsUrl} />
 			</Suspense>
 
 			<Suspense>

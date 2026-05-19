@@ -1,11 +1,6 @@
-import { groq } from 'next-sanity'
+import { buildAwardsQuery, buildBannerQuery } from '@shawnphoffman/pod-sites-shared/sanity'
 
 const podId = '386d4bf9-2128-40ae-bdae-22e23696f5bb'
 
-// =======================
-// AWARD QUERIES
-// =======================
-export const AWARDS_QUERY =
-	process.env.VERCEL_ENV === 'production'
-		? groq`*[_type == "award" && category._ref == "${podId}" && active==true && (!defined(expiresAt) || expiresAt > now())]`
-		: groq`*[_type == "award" && category._ref == "${podId}"]`
+export const BANNER_QUERY = buildBannerQuery(podId)
+export const AWARDS_QUERY = buildAwardsQuery(podId, process.env.VERCEL_ENV)
