@@ -1,13 +1,16 @@
 import { faStarSharp } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
 import { Suspense } from 'react'
 
-import { AwardsScrape, RatingsApple, RatingsGoodpods, RatingsSpotify } from '@shawnphoffman/pod-sites-shared/ratings'
+import { Awards, RatingsApple, RatingsGoodpods, RatingsSpotify } from '@shawnphoffman/pod-sites-shared/ratings'
 
 import { getAppleReviews } from '@/app/actions'
 import LinkCard from '@/components/core/LinkCard'
 import Reviews from '@/components/core/Reviews'
+import { getAwards } from '@/sanity/sanity.requests'
 
 import items, { appleRatingUrl, goodpodsUrl, spotifyUrl } from './links'
+
+const awardsClassName = 'flex flex-row flex-wrap justify-center flex-1 gap-2 gap-y-0.5 items-center bubbled'
 
 const appleClassName =
 	'flex flex-row items-center px-2 py-1 text-sm font-bold leading-normal text-white border-4 rounded-lg whitespace-nowrap bg-applepodcasts bubble-border'
@@ -54,7 +57,7 @@ export default async function Home() {
 			</div>
 
 			<Suspense>
-				<AwardsScrape goodpodsUrl={goodpodsUrl} />
+				<Awards getAwards={getAwards} className={awardsClassName} />
 			</Suspense>
 
 			<Suspense>
